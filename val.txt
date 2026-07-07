@@ -1,0 +1,2 @@
+Hierarchical multi-scale filters in LFM capture local short-distance word relations and global cross-paragraph context simultaneously. Scale gating weights different filter outputs adaptively according to input text features.
+Training long-sequence models with full memory requires careful control of sequence length and batch size to avoid GPU out-of-memory errors. Smaller sequence length reduces memory cost but limits context understanding ability.
