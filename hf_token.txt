@@ -1,3 +1,5 @@
+export HF_ENDPOINT=https://hf-mirror.com
+
 hf I DON'T KNOW
 
 
