@@ -91,3 +91,7 @@
 
         # 运行app启动web
         $ uv run streamlit dialog_app_web.py
+
+    2.8 运行CLI版对话
+
+        $ uv run python dialog_cli.py
