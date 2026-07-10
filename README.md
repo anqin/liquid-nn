@@ -54,8 +54,32 @@
 
         $ mkdir mytest
         $ cp job_config/sft_example.yaml  mytest
-        $ vim mytest/sft_example.yaml   //<--- 修改模型为：LFM2.5-350M
+        $ vim mytest/sft_example.yaml   //<--- 修改模型为：LFM2.5-350M，会自动从HF下载到~/.cache下面
 
         $ uv run leap-finetune mytest/sft_example.yaml
        
+    2.5 模型打包
+
+        $ uv tool install leap-bundle   //<-- 安装leap-bundle, 用于上传/下载HF上模型（本地运行用不上）
         
+        # 由于leap-finetune的SFT训练出来的是LORA（目录下没有config.json，只有adapter_config.json），所以要merge
+        # (1) 查找基座模型路径，如果没有就通过leap-bundle下载
+        # (2) 修改merge_model_lora.py的路径，填写基座模型路径和Adapter模型（LORA）路径
+        # (3) 运行脚本合并成运行的HF格式模型，并填写output路径
+
+        $ ls ~/.cache/huggingface/hub/... //<--- 基座模型在本地路径大致位置
+        $ uv run python merge_model_lora.py  //<-- 由于leap-finetune的SFT训练出来的是LORA（目录下没有config.json，只有adapter_config.json），所以要merge
+        
+
+    2.6 对新模型运行测试
+
+        $ vim mytest/eval_standalone_example.yaml
+
+        在model_name下面增加：
+
+        checkpoint: "outputs/my_complete_hf_model" //<--- 指向 merge_model_lora.py的output路径
+
+        然后，运行测试命令：
+
+        $ uv run leap-finetune eval mytest/eval_standalone_example.yaml 
+
