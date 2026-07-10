@@ -83,3 +83,11 @@
 
         $ uv run leap-finetune eval mytest/eval_standalone_example.yaml 
 
+
+    2.7 运行web版对话
+
+        # 安装streamlit
+        $ uv pip install streamlit
+
+        # 运行app启动web
+        $ uv run streamlit dialog_app_web.py
