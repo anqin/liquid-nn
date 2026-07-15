@@ -95,3 +95,13 @@
     2.8 运行CLI版对话
 
         $ uv run python dialog_cli.py
+
+
+3. 其他
+
+    3.1 HF模型下载（从HF hub下载指定模型）
+
+        $ export HF_ENDPOINT=https://hf-mirror.com
+        $ uv run hf auth login
+
+        $ uv run hf download LiquidAI/LFM2.5-8B-A1B
