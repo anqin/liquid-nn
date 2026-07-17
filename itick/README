@@ -1,0 +1,7 @@
+conda activate itick
+# 卸载selenium（可选）
+pip uninstall selenium webdriver-manager -y
+# 安装playwright及原有依赖
+pip install playwright pymysql beautifulsoup4 lxml argparse
+# 自动下载内置Chromium二进制（无需系统装Chrome）
+playwright install chromium
