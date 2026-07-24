@@ -1,11 +1,7 @@
-1. 切换conda到happy-llm
-2. 执行：
-
-    $ export HF_ENDPOINT=https://hf-mirror.com
-    $ python lfm_train_infer.py
-
-
----用阿里云运行leap-finetune后训练--
+#切换conda到happy-llm
+#执行：
+#$ export HF_ENDPOINT=https://hf-mirror.com
+#$ python lfm_train_infer.py
 
 1. 申请低配CPU高带宽机器，修改密码并登录
 
