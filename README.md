@@ -1,7 +1,8 @@
-#切换conda到happy-llm
-#执行：
-#$ export HF_ENDPOINT=https://hf-mirror.com
-#$ python lfm_train_infer.py
+先切换conda到happy-llm；然后注意环境
+    
+    $ export HF_ENDPOINT=https://hf-mirror.com
+
+下面开始从aliyun上运行：
 
 1. 申请低配CPU高带宽机器，修改密码并登录
 
